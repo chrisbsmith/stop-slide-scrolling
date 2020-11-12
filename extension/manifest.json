@@ -1,7 +1,6 @@
 {
-
     "manifest_version": 2,
-    "name": "Stop Slide Scrolling in Google Presentation",
+    "name": "Stop Slide Scrolling in Google Presentation - Local",
     "version": "0.1.2",
     "author": "Owen Mundy",
     "homepage_url": "https://github.com/sneakaway-studio/stop-slide-scrolling",
@@ -11,21 +10,18 @@
         "48": "assets/img/icon48.png",
         "128": "assets/img/icon128.png"
     },
-    "background": {
-        "scripts": ["analytics.js"]
-    },
-    "content_scripts": [{
-        "matches": ["https://docs.google.com/presentation/*","https://docs.google.com/drawings/*"],
-        "js": ["content.js"],
-        "run_at": "document_end"
-    }],
-    "converted_from_user_script": true,
-
-    "permissions": [
-        "https://www.google-analytics.com/"
+    "content_scripts": [
+        {
+            "matches": [
+                "https://docs.google.com/presentation/*",
+                "https://docs.google.com/drawings/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
     ],
-    "offline_enabled": true,
-    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
-
-
+    "converted_from_user_script": true,
+    "offline_enabled": true
 }
